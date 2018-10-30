@@ -39,14 +39,39 @@ class Admin extends Component{
             this.props.getUser()
         })
     }
+
+    handleDelete = (id) =>{
+        axios.delete(`/api/user/${id}`)
+        .then( (res)=>{
+        this.setState({
+        hero_img: res.data,
+        blog_about_text: res.data,
+        user_logo: res.data})
+        this.props.getUser()
+        })
+    }
     
     
     
     render(){
-        const {user} = this.props.state
-        const homeBlog =user[user.length -1] && user[user.length -1].blog_about_text
-        const heroImg =user[user.length -1] && user[user.length -1].hero_img
-        const logo =user[user.length -1] && user[user.length -1].user_logo
+        const about = this.props.state.user.map((e,i)=>{
+            return (
+                    <div key={i}>
+                    <div>
+                    {e.user_logo}
+                    </div>
+                    <div>
+                    {e.hero_img}
+                    </div>
+                    <div>
+                    {e.blog_about_text}
+                    </div>
+                    <button onClick={()=>this.handleDelete(e.about_id)}>Delete</button>
+                    <button>edit</button>
+                    </div>
+                )
+            })
+
         return(
             <div> 
                 <div className="center">
@@ -55,12 +80,6 @@ class Admin extends Component{
                     Add your logo here!
                     <br></br>
                     <input type="text" value={this.state.user_logo} onChange={e => this.logoHandler(e.target.value)}/>
-                    {/* <button onClick={()=> this.submitLogo()}>submit dis bich</button> */}
-                    <div>
-                        <br></br>
-                    Preview: {logo}
-                    
-                    </div>
                     <br></br>
                 </div>
                 
@@ -68,12 +87,7 @@ class Admin extends Component{
                     Add an image on your home page here!
                     <br></br>
                 <input type="text" value={this.state.hero_img} onChange={e => this.heroImgHandler(e.target.value)}/>
-                {/* <button onClick={() =>this.submitHeroImg()}>Submit dis bich</button> */}
                 </div>
-            <div>
-                <br></br>
-               Preview: {heroImg}
-            </div>
             <br></br>
             <div>
                 Tell us about yourself!
@@ -84,7 +98,8 @@ class Admin extends Component{
                 </div>
                 <div>
                 <br></br>
-                    Preview: {homeBlog} 
+                    Preview:
+                  {about}
                 </div>
             
             </div>
@@ -102,6 +117,14 @@ export default connect(
     { getUser }
     )(Admin);
     
+
+
+
+
+
+
+
+
     
     // this.heroImg = this.props.state.user.map((e,i)=>{
         //     return (
@@ -144,24 +167,35 @@ export default connect(
                                             //         this.props.getUser()
                                             // })
                                             // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    
-                                    
-                                    
-                                    
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            // <div>
+                                            // {logo}
+                                            // <br></br>
+                                            // {heroImg}
+                                            // <br></br>
+                                            // {homeBlog} 
+                                            // </div>
+                                            
+                                            
+                                            
+                                            
+                                            // const {user} = this.props.state
+        // const homeBlog =user[user.length -1] && user[user.length -1].blog_about_text
+        // const heroImg =user[user.length -1] && user[user.length -1].hero_img
+        // const logo =user[user.length -1] && user[user.length -1].user_logo
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            // {/* <button onClick={() =>this.submitHeroImg()}>Submit dis bich</button> */}
+                                            // {/* <button onClick={()=> this.submitLogo()}>submit dis bich</button> */}

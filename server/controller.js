@@ -14,11 +14,27 @@ const addAbout = ( req, res)=>{
     .then( response => res.status(200).json(response))
 }
 
+const deleteAbout = (req, res)=>{
+    const dbInstance = req.app.get('db');
+    const {id} = req.params
+    dbInstance
+    .delete_about(id)
+    .then(response => {res.status(200).json(response)})
+}
+
+const updateAbout = (req, res) =>{
+    const dbInstance = req.app.get('db');
+
+    dbInstance
+    .update_about(id)
+    .then(response => res.status.json(response))
+}
+
 module.exports={
     getUser,
-    // addBlogImg,
-    // addLogo,
-    addAbout
+    addAbout,
+    deleteAbout,
+    updateAbout
 }
 
 

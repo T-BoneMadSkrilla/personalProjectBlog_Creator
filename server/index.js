@@ -12,7 +12,7 @@ app.use(cors());
 
 const port = 3011;
 
-const {getUser, addAbout} = require('./controller');
+const {getUser, addAbout, deleteAbout, updateAbout} = require('./controller');
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
         app.set('db', dbInstance)
@@ -21,6 +21,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 
 app.get('/api/user', getUser)
 app.post('/api/user', addAbout)
+app.delete('/api/user/:id', deleteAbout)
+app.put('/api/user/:id', updateAbout)
 
 app.listen(port, ()=> console.log(`up in dis bich listening to ${port}`));
 
