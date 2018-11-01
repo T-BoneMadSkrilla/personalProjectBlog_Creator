@@ -6,3 +6,19 @@
     text-align: center;
     margin-top: 15%;
 }
+
+.next{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+.next a{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+}
+.next a:hover{
+    font-size: 1.25em;
+}

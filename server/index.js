@@ -22,7 +22,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 app.get('/api/user', getUser)
 app.post('/api/user', addAbout)
 app.delete('/api/user/:id', deleteAbout)
-app.put('/api/user/:id', updateAbout)
+app.put('/api/updateabout/:id', updateAbout)
 
 app.listen(port, ()=> console.log(`up in dis bich listening to ${port}`));
 

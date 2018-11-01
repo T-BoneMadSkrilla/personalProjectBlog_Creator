@@ -1,0 +1,37 @@
+.editCenter{
+    width: 80%;
+    height: 1700px;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+    margin-top: 15%;
+    background-color: rgb(151, 215, 240, 0.5);
+    padding: 10px;
+    /* margin: 10px; */
+    border-radius: 3.14159265358979%;
+    z-index: -1;
+}
+
+.bottomButton{
+    position: absolute;
+    bottom: 2%;
+    left: 90vw;
+    
+}
+
+.button{
+    background: rgba(63, 123, 146, 0.5);
+    border-radius: 6%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover{
+    font-size: 1.03em;
+    cursor: pointer;
+}

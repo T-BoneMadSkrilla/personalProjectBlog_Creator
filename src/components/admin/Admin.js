@@ -3,6 +3,7 @@ import './Admin.css';
 import axios from "axios";
 import {connect} from "react-redux";
 import {getUser} from '../../redux/reducer';
+import{Link} from 'react-router-dom';
 
 class Admin extends Component{
     constructor(){
@@ -10,7 +11,8 @@ class Admin extends Component{
         this.state={
             hero_img: "",
             blog_about_text: "",
-            user_logo: ""
+            user_logo: "",
+            edit: false
         };
     }
     componentDidMount(){
@@ -50,6 +52,21 @@ class Admin extends Component{
         this.props.getUser()
         })
     }
+
+    handleEdit = (id) =>{
+        console.log(id)
+        axios.put(`/api/updateabout/${id}`,{
+            user_logo: "default",
+            blog_about_text: "default",
+            hero_img: "default"
+            }).then( () => {
+            this.setState({ 
+            user_logo: "",
+            hero_img: "",
+            blog_about_text: "" })
+            this.props.getUser()
+        })
+    }
     
     
     
@@ -67,7 +84,9 @@ class Admin extends Component{
                     {e.blog_about_text}
                     </div>
                     <button onClick={()=>this.handleDelete(e.about_id)}>Delete</button>
-                    <button>edit</button>
+                    <div>
+                    <button onClick={()=>this.handleEdit(e.about_id)}>resort to default</button>
+                    </div>
                     </div>
                 )
             })
@@ -101,7 +120,9 @@ class Admin extends Component{
                     Preview:
                   {about}
                 </div>
-            
+                <div className="next">
+                <Link to="/editblog">NEXT</Link>
+                </div>
             </div>
         </div>
         )

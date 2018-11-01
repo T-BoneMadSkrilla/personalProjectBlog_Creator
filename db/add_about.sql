@@ -1,4 +1,9 @@
+
+
 INSERT INTO user_info (user_logo, hero_img, blog_about_text) VALUES ($1, $2, $3);
+
+-- update 
+-- table_name set column2 = comlumn1, comlumn1 = $1
 
 -- INSERT INTO user_info (hero_img) VALUES ($1);
 

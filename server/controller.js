@@ -17,17 +17,22 @@ const addAbout = ( req, res)=>{
 const deleteAbout = (req, res)=>{
     const dbInstance = req.app.get('db');
     const {id} = req.params
+    console.log(req.body)
     dbInstance
     .delete_about(id)
     .then(response => {res.status(200).json(response)})
 }
 
 const updateAbout = (req, res) =>{
-    const dbInstance = req.app.get('db');
 
+    const dbInstance = req.app.get('db');
+    const {user_logo, hero_img, blog_about_text} = req.body
+    console.log(req.body, req.params)
     dbInstance
-    .update_about(id)
-    .then(response => res.status.json(response))
+    .update_about([req.params.id, user_logo, hero_img, blog_about_text])
+    .then(response => {
+        res.status(200).json(response)})
+        .catch(err => console.log(err))
 }
 
 module.exports={
