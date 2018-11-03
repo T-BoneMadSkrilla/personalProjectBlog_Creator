@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const GET_USER = "GET_USER"
+const GET_BLOG = "GET_BLOG"
 
 export function getUser(){
     return {
@@ -11,9 +12,19 @@ export function getUser(){
     }
 }
 
+export function getBlog(){
+    return {
+        type: GET_BLOG,
+        payload: axios.get('/api/blog').then( res => {
+            console.log(res.data)
+            return res.data
+        })
+    }
+}
+
 const initialState = {
     user: [],
-    // blogPost: []
+    blogPost: []
 }
 
 
@@ -25,11 +36,11 @@ export default function reducer(state = initialState, action){
                 user: action.payload
             };
 
-        // case GET_BLOGS:
-        //     return {
-        //         ...state,
-        //         blogPost: action.payload
-        //     }
+        case GET_BLOG + "_FULFILLED":
+            return {
+                ...state,
+                blogPost: action.payload
+            }
         default:
         return state;
     }

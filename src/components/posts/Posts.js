@@ -1,40 +1,44 @@
 import React, {Component} from 'react';
 import './Posts.css';
 import { connect } from "react-redux";
-import {getUser} from '../../redux/reducer';
+import {getUser, getBlog} from '../../redux/reducer';
+// import {stateToHTML} from 'draft-js-export-html';
+
+import DisplayEditor from '../postEditor/DisplayEditor';
+
 
 class Posts extends Component{
- 
-    componentDidMount(){
-        this.props.getUser()
+
+    constructor(){
+        super()
+       
     }
 
+    // componentDidMount() {
+    //     // Load editor data (raw js object) from local storage
+    //     const rawEditorData = this.getSavedEditorData();
+    //     if (rawEditorData !== null) {
+    //       const contentState = convertFromRaw(rawEditorData);
+    //       this.setState({
+    //         editorState: EditorState.createWithContent(contentState)
+    //       });
+    //     }
+    //   }
+ 
+//  componentDidMount(){
+//          this.props.getBlog()
+         
+//         console.log(getBlog())
+   
+//     }
+            
     render(){
-
-        this.blogHeroImg = this.props.state.user.map((e,i)=>{
-            return (
-                <div key={i}>
-                {e.hero_blog_img}
-                </div>
-            )
-        })
-
-        this.blogText = this.props.state.user.map((e,i)=>{
-            return (
-                <div key={i}>
-                {e.blog_post}
-                </div>
-            )
-        })
-
         return(
             <div className="center">
                 Posts
-                <div>
-               {this.blogHeroImg}
-               </div>
                <div>
-                {this.blogText}
+                   
+                <DisplayEditor/>
                </div>
             </div>
         )
@@ -46,5 +50,12 @@ function mapStatetoProps(state){
 
 export default connect(
     mapStatetoProps, 
-    { getUser }
+    { getUser, getBlog }
     )(Posts);
+                                                        // this.blogHeroImg = this.props.state.user.map((e,i)=>{
+                                                        //     return (
+                                                        //         <div key={i}>
+                                                        //         {e.hero_blog_img}
+                                                        //         </div>
+                                                        //     )
+                                                        // })

@@ -35,11 +35,31 @@ const updateAbout = (req, res) =>{
         .catch(err => console.log(err))
 }
 
+const getBlog = (req, res) => {
+    req.app.get('db')
+    .get_blogs()
+    .then(response => res.status(200).json(response))
+}
+
+const addBlog = ( req, res)=>{
+    const dbInstance = req.app.get('db');
+    const{blog_text} = req.body;
+    console.log(blog_text)
+    dbInstance
+    .add_blog(blog_text)
+    .then( response => res.status(200).json(response))
+    .catch(err=> {
+        console.log(err)
+    })
+}
+
 module.exports={
     getUser,
     addAbout,
     deleteAbout,
-    updateAbout
+    updateAbout,
+    getBlog,
+    addBlog
 }
 
 
