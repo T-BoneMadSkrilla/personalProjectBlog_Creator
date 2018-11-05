@@ -34,6 +34,7 @@
 .bottomButton{
     position: absolute;
     bottom: 2%;
+    top: 15px;
     left: 90vw;
     
 }

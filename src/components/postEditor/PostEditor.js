@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {EditorState, RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
+import { RichUtils, convertToRaw} from 'draft-js';
 import './PostEditor.css'
 import BlockStyleToolbar, {getBlockStyle} from "../BlockStyleToolbar";
 
@@ -44,7 +44,7 @@ class PostEditor extends React.Component{
         let blog_text = JSON.stringify(note.content);
         
         axios.post('/api/blog', {blog_text}).then(()=>{
-            this.setState({editorState: createEditorStateWithText(text)})
+            // this.setState({editorState})
             console.log(blog_text)
         })
     }

@@ -12,7 +12,8 @@ class Admin extends Component{
             hero_img: "",
             blog_about_text: "",
             user_logo: "",
-            edit: false
+            edit: false,
+            background: ""
         };
     }
     componentDidMount(){
@@ -56,9 +57,9 @@ class Admin extends Component{
     handleEdit = (id) =>{
         console.log(id)
         axios.put(`/api/updateabout/${id}`,{
-            user_logo: "default",
-            blog_about_text: "default",
-            hero_img: "default"
+            user_logo: "Home",
+            hero_img: "default",
+            blog_about_text: "default"
             }).then( () => {
             this.setState({ 
             user_logo: "",
@@ -78,7 +79,7 @@ class Admin extends Component{
                     {e.user_logo}
                     </div>
                     <div>
-                    {e.hero_img}
+                    <img src={e.hero_img}/>
                     </div>
                     <div>
                     {e.blog_about_text}
@@ -94,36 +95,54 @@ class Admin extends Component{
         return(
             <div> 
                 <div className="center">
+                <div>
+
+                Background options
+                <br></br>
+                <select>
+                    <option value="color1">option1</option>
+                    <option value="color2">option2</option>
+                    <option value="colo3r">option3</option>
+                    <option value="color4">option4</option>
+                    <option value="color5">option5</option>
+                    <option value="color6">option6</option>
+                    <option value="color7">option7</option>
+                    <option value="color8">option8</option>
+                    <option value="color9">option9</option>
+                    <option value="color10">option10</option>
+                    <option value="color11">option12</option>
+                </select>
 
                 <div>
-                    Add your logo here!
                     <br></br>
-                    <input type="text" value={this.state.user_logo} onChange={e => this.logoHandler(e.target.value)}/>
+                    <input type="text" value={this.state.user_logo} onChange={e => this.logoHandler(e.target.value)} placeholder="Add your logo here!"/>
                     <br></br>
                 </div>
                 
                 <div>
-                    Add an image on your home page here!
+        
                     <br></br>
-                <input type="text" value={this.state.hero_img} onChange={e => this.heroImgHandler(e.target.value)}/>
+                <input type="text" value={this.state.hero_img} onChange={e => this.heroImgHandler(e.target.value)} placeholder="Add an image on your home page here!"/>
                 </div>
             <br></br>
             <div>
-                Tell us about yourself!
                 <br></br>
-                <input type="text" value={this.state.blog_about_text} onChange={e => this.blogAboutHandler(e.target.value)}/>
+                <input style={{width: "500px"}}type="text" value={this.state.blog_about_text} onChange={e => this.blogAboutHandler(e.target.value)} placeholder="Tell us about yourself!"/>
                 <br></br>
-                <button onClick={() =>this.submitAbout()}>Submit dis bich</button>
+                <button onClick={() =>this.submitAbout()}>Submit</button>
                 </div>
                 <div>
                 <br></br>
-                    Preview:
+                    Quick Preview:
                   {about}
                 </div>
+                <br></br>
+                <br></br>
                 <div className="next">
-                <Link to="/editblog">NEXT</Link>
+                <Link to="/editblog">Click here to edit your blog</Link>
                 </div>
             </div>
+                </div>
         </div>
         )
     }

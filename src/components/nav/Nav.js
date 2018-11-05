@@ -21,15 +21,15 @@ class Nav extends Component{
                 <div className="topMiddle">
             
 
-                <div>
+                <div className="logo">
                 <Link to="/"> {logo} </Link>
                 </div>
 
-                <div>
+                <div className="posts">
                 <Link to="/blog" >Posts</Link>
                 <div>
                     <br></br>
-                <Link to="/store">Store</Link>
+                {/* <Link to="/store">Store</Link> */}
                 </div>
                 </div>
 

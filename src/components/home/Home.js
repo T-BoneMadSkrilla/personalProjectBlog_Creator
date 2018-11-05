@@ -17,13 +17,17 @@ class Home extends Component{
         const heroImg =user[user.length -1] && user[user.length -1].hero_img
         return(
             <div className="center">
-                About
+
+            <div className="background1">
+
                 <div>
-                    {heroImg}
+                   <img src={heroImg} />
                 </div>
-                <div>
+                <br></br>
+                <div className="blogText">
                     {homeBlog}
                 </div>
+            </div>
             </div>
         )
     }

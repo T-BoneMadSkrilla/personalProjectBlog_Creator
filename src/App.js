@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Provider store={store}>
       <Router>
-        <div>
+        <div className="background">
 
         
             <div>
@@ -20,8 +20,9 @@ class App extends Component {
             </div>
         
            {routes}
-          
+          <div className="loginStyle">
           <Link to="/user"> Login </Link>
+          </div>
 
        </div>
       </Router>

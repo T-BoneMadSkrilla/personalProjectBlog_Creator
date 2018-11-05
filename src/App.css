@@ -1,11 +1,27 @@
 .background{
-  background: #fcf8f7;
+  /* background: linear-gradient(to right, #02AAB0, #00CDAC ); */
   position: relative;
 }
 
-body{
-  background:#fcf8f7;
+/* body{ */
+  /* background:linear-gradient(to right, #02AAB0, #00CDAC ); */
+/* } */
+
+.loginStyle{
+  background: orange;
+  width: 70px;
+  height: 35px;
+  border-radius: 6%;
+  position: absolute;
+  text-align: center;
+  left: 1%;
 }
 
+.loginStyle a{
+  text-decoration: none;
+  font-size: 1.2em;
+  color: black;
+  text-align: center;
+}
 
 
