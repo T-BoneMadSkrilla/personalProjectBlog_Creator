@@ -19,11 +19,11 @@
 
   .editCenter{
     width: 80%;
-    height: 1700px;
+    min-height: 1700px;
     position: absolute;
     left: 10%;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 12%;
     background-color: rgb(151, 215, 240, 0.5);
     padding: 10px;
     /* margin: 10px; */
