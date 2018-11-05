@@ -15,6 +15,8 @@ class App extends Component {
         <div className="background">
 
         
+
+        
             <div>
               <Nav />
             </div>
@@ -24,7 +26,8 @@ class App extends Component {
           <Link to="/user"> Login </Link>
           </div>
 
-       </div>
+       
+        </div>
       </Router>
       </Provider>
     );

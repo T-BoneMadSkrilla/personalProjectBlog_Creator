@@ -94,7 +94,7 @@ class Admin extends Component{
 
         return(
             <div> 
-                <div className="center">
+                <div className="adminCenter">
                 <div>
 
                 Background options

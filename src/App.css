@@ -1,20 +1,22 @@
 .background{
-  /* background: linear-gradient(to right, #02AAB0, #00CDAC ); */
-  position: relative;
+  background: #fcf8f7;
+  z-index: 1;
 }
 
-/* body{ */
-  /* background:linear-gradient(to right, #02AAB0, #00CDAC ); */
-/* } */
+ 
+   /* background:linear-gradient(to right, #02AAB0, #00CDAC );  */
+ 
 
 .loginStyle{
   background: orange;
   width: 70px;
   height: 35px;
   border-radius: 6%;
-  position: absolute;
-  text-align: center;
-  left: 1%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: 3px 3px;
+  padding: 3px;
 }
 
 .loginStyle a{

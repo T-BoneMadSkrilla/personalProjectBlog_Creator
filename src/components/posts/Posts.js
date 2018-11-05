@@ -11,10 +11,10 @@ class Posts extends Component{
          
     render(){
         return(
-            <div className="center">
-               <div> 
+            <div className="postCenter">
+            
                 <DisplayEditor/>
-               </div>
+               
             </div>
         )
     }

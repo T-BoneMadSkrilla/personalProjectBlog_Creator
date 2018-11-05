@@ -16,7 +16,7 @@ class Home extends Component{
         const homeBlog =user[user.length -1] && user[user.length -1].blog_about_text
         const heroImg =user[user.length -1] && user[user.length -1].hero_img
         return(
-            <div className="center">
+            <div className="homeCenter">
 
             <div className="background1">
 

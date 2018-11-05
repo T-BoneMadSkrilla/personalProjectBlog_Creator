@@ -15,7 +15,7 @@ import axios from 'axios';
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];
 
-const text = `Click on the add button in the top right to add images, and don't forget to delete this text before posting`;
+const text = `Click on the add button to add images, and don't forget to delete this text before posting`;
 
 class PostEditor extends React.Component{
 
@@ -31,12 +31,8 @@ class PostEditor extends React.Component{
         this.setState({
             editorState
         })
-        // const editorJSON = JSON.stringify(convertToRaw(EditorState.getContents()));
     }
 
-    // var content = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
-
-    // content = this.state.editorState.getCurrentContent()
 
     sumbitPost = () => {
         let contentState = this.state.editorState.getCurrentContent();
@@ -80,13 +76,6 @@ class PostEditor extends React.Component{
          
          
          render(){
-             
-             
-                    //   const rawDraftContentState = JSON.stringify( convertToRaw(this.state.editorState.getCurrentContent()) );
-                    //   convert the raw state back to a useable ContentState object
-                    //   const contentState = convertFromRaw( JSON.parse( rawDraftContentState) );
-        
-    
         return(
             <div>
                 <div className="editCenter">
@@ -99,6 +88,11 @@ class PostEditor extends React.Component{
                 <button onClick={this.onBoldClick}><b>B</b></button>
                 <button onClick={this.onItalicClick}><em>I</em></button>
 
+                <ImageAdd
+                   editorState={this.state.editorState}
+                   onChange={this.onChange}
+                   modifier={imagePlugin.addImage}
+                   />
                 <Editor 
                 blockStyleFn={getBlockStyle}
                 editorState={this.state.editorState}
@@ -107,21 +101,14 @@ class PostEditor extends React.Component{
                 plugins={plugins}
                 ref={(element) => { this.editor = element; }}
                 />
+                    
                 </div>
+            
 
-                 <ImageAdd
-                    editorState={this.state.editorState}
-                    onChange={this.onChange}
-                    modifier={imagePlugin.addImage}
-                    />
 
                 <br></br>
                 <div className="bottomButton">
                 <button onClick={this.sumbitPost}type="button" className="button">POST</button>
-                </div>
-
-                <div>
-                    
                 </div>
 
             </div>
