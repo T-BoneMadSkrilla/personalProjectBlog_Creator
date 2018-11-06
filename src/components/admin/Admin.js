@@ -4,6 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {getUser} from '../../redux/reducer';
 import{Link} from 'react-router-dom';
+import Nav from '../nav/Nav'
 
 class Admin extends Component{
     constructor(){
@@ -94,6 +95,7 @@ class Admin extends Component{
 
         return(
             <div> 
+                <Nav/>
                 <div className="adminCenter">
                 <div>
 

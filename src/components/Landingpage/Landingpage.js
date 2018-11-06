@@ -1,23 +1,20 @@
 import React, {Component} from 'react';
-import './Posts.css';
+import './Landingpage.css';
 import { connect } from "react-redux";
 import {getUser, getBlog} from '../../redux/reducer';
-import Nav from '../nav/Nav'
-
-import DisplayEditor from '../postEditor/DisplayEditor';
 
 
-class Posts extends Component{
+// import DisplayEditor from '../postEditor/DisplayEditor';
+
+
+class Landingpage extends Component{
          
     render(){
         return(
             <div>
-            <Nav />
-            <div className="postCenter">
             
-                <DisplayEditor/>
+              aye o this is the Landingpage
                
-            </div>
             </div>
         )
     }
@@ -29,5 +26,4 @@ function mapStatetoProps(state){
 export default connect(
     mapStatetoProps, 
     { getUser, getBlog }
-    )(Posts);
-                                                        
+    )(Landingpage);

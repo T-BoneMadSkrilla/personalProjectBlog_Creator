@@ -17,12 +17,11 @@ class DisplayEditor extends Component{
     componentDidMount(){
       this.props.getBlog().then(() => {
         var contentState = EditorState.createWithContent(convertFromRaw(this.props.state.blogPost[1].blog_text))
-        console.log(contentState)
         this.setState({
           editorState: contentState
         })
       })
-        }
+    }
     
 
     onChange = (editorState) => {

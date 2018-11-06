@@ -16,27 +16,29 @@ class Nav extends Component{
         const logo =user[user.length -1] && user[user.length -1].user_logo
         // const Home = "Home"
         return(
-        <div className="sizing"> 
+        <div>
+            <div className="homeStyle">
+                <Link to="/">back to home</Link>
+            </div>
 
-                <div className="topMiddle">
+                <div className="sizing"> 
+
+                    <div className="topMiddle">
             
 
-                <div className="logo">
-                <Link to="/"> {logo} </Link>
-                </div>
+                    <div className="logo">
+                    <Link to="/home"> {logo} </Link>
+                    </div>
 
-                <div className="posts">
-                <Link to="/blog" >Posts</Link>
-                <div>
-                    <br></br>
-                {/* <Link to="/store">Store</Link> */}
-                </div>
-                </div>
+                    <div className="posts">
+                    <Link to="/blog" >Posts</Link>
+                    </div>
 
                 
 
-            </div>
+                    </div>
 
+                </div>
         </div>
         )
     }

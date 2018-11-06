@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Nav from '../nav/Nav'
 import { RichUtils, convertToRaw} from 'draft-js';
 import './PostEditor.css'
 import BlockStyleToolbar, {getBlockStyle} from "../BlockStyleToolbar";
@@ -78,6 +78,7 @@ class PostEditor extends React.Component{
          render(){
         return(
             <div>
+                <Nav />
                 <div className="editCenter">
                 <BlockStyleToolbar
                 editorState={this.state.editorState}

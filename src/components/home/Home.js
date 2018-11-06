@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Home.css';
 import { connect } from "react-redux";
 import {getUser} from '../../redux/reducer';
+import Nav from '../nav/Nav'
 
 class Home extends Component{
   
@@ -16,6 +17,8 @@ class Home extends Component{
         const homeBlog =user[user.length -1] && user[user.length -1].blog_about_text
         const heroImg =user[user.length -1] && user[user.length -1].hero_img
         return(
+            <div>
+            <Nav/>
             <div className="homeCenter">
 
             <div className="background1">
@@ -27,6 +30,7 @@ class Home extends Component{
                 <div className="blogText">
                     {homeBlog}
                 </div>
+            </div>
             </div>
             </div>
         )
