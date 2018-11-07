@@ -46,8 +46,8 @@
     display: flex;
     align-content: center;
     align-items: center;
-    margin: 3px 3px;
-    padding: 3px;
+    margin: 4px 4px;
+    padding: 4px;
   }
   
   .homeStyle a{
@@ -55,5 +55,6 @@
     font-size: 1.1em;
     color: black;
     text-align: center;
+    align-content: center;
     font-family: Arial, Helvetica, sans-serif;
   }

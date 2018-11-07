@@ -59,8 +59,8 @@ class Admin extends Component{
         console.log(id)
         axios.put(`/api/updateabout/${id}`,{
             user_logo: "Home",
-            hero_img: "default",
-            blog_about_text: "default"
+            hero_img: "https://emais.estadao.com.br/blogs/comida-de-verdade/wp-content/uploads/sites/313/2016/10/256344-dual-flush-corner-toilet-white.jpg",
+            blog_about_text: "This is my blog"
             }).then( () => {
             this.setState({ 
             user_logo: "",

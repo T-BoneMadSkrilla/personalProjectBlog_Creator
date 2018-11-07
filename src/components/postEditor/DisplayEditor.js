@@ -16,7 +16,7 @@ class DisplayEditor extends Component{
       };
     componentDidMount(){
       this.props.getBlog().then(() => {
-        var contentState = EditorState.createWithContent(convertFromRaw(this.props.state.blogPost[1].blog_text))
+        var contentState = EditorState.createWithContent(convertFromRaw(this.props.state.blogPost[this.props.state.blogPost.length -1].blog_text))
         this.setState({
           editorState: contentState
         })

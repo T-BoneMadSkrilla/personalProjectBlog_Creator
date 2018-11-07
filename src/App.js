@@ -3,7 +3,9 @@ import './App.css';
 import routes from './routes';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from "react-redux";
-import store from "./redux/store"
+import store from "./redux/store";
+
+
 
 class App extends Component {
   render() {
@@ -18,7 +20,7 @@ class App extends Component {
             <div>
               
           <div className="loginStyle">
-          <a href="process.env.REACT_APP_LOGIN">Login</a>
+          <a href={process.env.REACT_APP_LOGIN}>  Login   </a>
           </div>
             </div>
            {routes}
