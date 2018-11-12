@@ -32,13 +32,25 @@ passport.use( new Auth0Strategy({
   scope: "openid email profile"
  },
  function(_, __, ___, profile, done) {
+  //  let userData = profile._json
    return done(null, profile);
  }
 ) );
 
 passport.serializeUser( (user, done) => {
-        done(null, { clientID: user.id, email: user._json.email, name: user._json.name });
-      });
+    const db = app.get('db');
+console.log(`play o' play`,user)
+    db.get_auth(user.id).then( response =>{
+      if(!response[0]){
+        db.add_auth(user.emails[0].value, user.id).then(
+          res=> done(null, res[0])
+          .catch( err => {done(err,null)})
+        )
+      } else {
+        return done(null, response[0])
+      }}
+    ).catch(err=> done(err,null))
+  });
 
 passport.deserializeUser( (obj, done) => {
         done( null, obj );
@@ -47,7 +59,7 @@ passport.deserializeUser( (obj, done) => {
       
       
       
-      const {getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog} = require('./controller');
+      const {getAllUserz, getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog} = require('./controller');
       
       massive(process.env.CONNECTION_STRING).then(dbInstance => {
               app.set('db', dbInstance)
@@ -55,11 +67,12 @@ passport.deserializeUser( (obj, done) => {
         
         app.get( '/login',
         passport.authenticate('auth0',
-          { successRedirect: 'http://localhost:3000/user', failureRedirect: '/login', failureFlash: true  }
+          { successRedirect: 'http://localhost:3000/user', failureRedirect: '/login'}
         )
       );
 
-      app.get('/api/user/:id', ( req, res, next) => {
+      app.get('/api/getuser/', ( req, res, next) => { //just a test
+        console.log(req.user)
         if ( !req.user ) {
           res.redirect('/login');
         } else {
@@ -67,6 +80,7 @@ passport.deserializeUser( (obj, done) => {
         }
       });
 
+app.get('/api/alluserz', getAllUserz)
 app.get('/api/user', getUser)
 app.post('/api/user', addAbout)
 app.delete('/api/user/:id', deleteAbout)

@@ -12,6 +12,10 @@ import ImageAdd from './ImageAdd';
 
 import axios from 'axios';
 
+import DisplayEditor from '../postEditor/DisplayEditor';
+import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
+import DisplayEditorThree from '../postEditor/DisplayEditorThree';
+
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];
 
@@ -79,6 +83,8 @@ class PostEditor extends React.Component{
         return(
             <div>
                 <Nav />
+                <div className="tryingToCenter">
+
                 <div className="editCenter">
                 <BlockStyleToolbar
                 editorState={this.state.editorState}
@@ -86,6 +92,7 @@ class PostEditor extends React.Component{
                 />
 
                 <button onClick={this.onUnderlineClick}>U</button>
+                
                 <button onClick={this.onBoldClick}><b>B</b></button>
                 <button onClick={this.onItalicClick}><em>I</em></button>
 
@@ -104,6 +111,7 @@ class PostEditor extends React.Component{
                 />
                     
                 </div>
+                </div>
             
 
 
@@ -111,7 +119,14 @@ class PostEditor extends React.Component{
                 <div className="bottomButton">
                 <button onClick={this.sumbitPost}type="button" className="button">POST</button>
                 </div>
-
+                {/* <div className="preview"> */}
+                {/* <h3>
+                    Preview:
+                    </h3>
+                <DisplayEditor/>
+               <DisplayEditorTwo/>
+               <DisplayEditorThree/>
+                </div> */}
             </div>
         )
     }

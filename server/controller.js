@@ -1,6 +1,16 @@
+const getAllUserz = (req, res) => {
+    const dbInstance = req.app.get('db');
+    dbInstance
+    .get_all_userz()
+    .then(response => res.status(200).json(response))
+}
+
 const getUser = (req, res)=>{
-    req.app.get('db')
-    .get_user()
+    const dbInstance = req.app.get('db');
+    console.log('booty-clappa',req.user.user_id)
+    // const {user_id} = req.user
+    dbInstance
+    .get_user([req.user.user_id])
     .then(response => res.status(200).json(response))
 }
 
@@ -8,9 +18,9 @@ const getUser = (req, res)=>{
 const addAbout = ( req, res)=>{
     const dbInstance = req.app.get('db');
     const{user_logo, hero_img, blog_about_text} = req.body;
-    
+    const {user_id} = req.user
     dbInstance
-    .add_about(user_logo, hero_img, blog_about_text)
+    .add_about([user_logo, hero_img, blog_about_text, user_id])
     .then( response => res.status(200).json(response))
 }
 
@@ -54,6 +64,7 @@ const addBlog = ( req, res)=>{
 }
 
 module.exports={
+    getAllUserz,
     getUser,
     addAbout,
     deleteAbout,

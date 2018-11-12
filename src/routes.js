@@ -11,7 +11,7 @@ import Landingpage from "./components/Landingpage/Landingpage";
 export default (
   <Switch>
     <Route path="/" exact component={Landingpage} />
-    <Route path="/home" component={Home}/>
+    <Route path="/home/:user_id" component={Home}/>
     <Route path="/blog" component={Posts} />
     <Route path="/store" component={Store} />
     <Route path="/user" component={Admin}/>

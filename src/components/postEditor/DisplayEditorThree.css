@@ -1,0 +1,9 @@
+.editDisplayThree{
+    width: 90%;
+    min-height: 400px;
+    text-align: center;
+    margin-top: 6%;
+    background-color: rgb(151, 215, 240, 0.5);
+    padding: 10px;
+    border-radius: 3.14159265358979%;
+}

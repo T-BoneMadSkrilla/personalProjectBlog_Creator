@@ -34,7 +34,8 @@ class Admin extends Component{
     
     submitAbout(){
         const {user_logo, hero_img, blog_about_text} = this.state
-        axios.post('/api/user', {user_logo, hero_img, blog_about_text})
+        console.log(this.state)
+        axios.post(`/api/user`, {user_logo, hero_img, blog_about_text})
         .then( () => {
             this.setState({ 
             hero_img: "",
@@ -80,9 +81,9 @@ class Admin extends Component{
                     {e.user_logo}
                     </div>
                     <div>
-                    <img src={e.hero_img}/>
+                    <img className="adminImgContainer"src={e.hero_img}/>
                     </div>
-                    <div>
+                    <div className="adminBlogText">
                     {e.blog_about_text}
                     </div>
                     <button onClick={()=>this.handleDelete(e.about_id)}>Delete</button>

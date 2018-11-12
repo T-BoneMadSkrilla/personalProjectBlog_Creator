@@ -1,1 +1,1 @@
-SELECT * FROM blog_info;
+SELECT * FROM blogz_info;

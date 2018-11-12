@@ -12,6 +12,7 @@ render() {
 return (
         <span className={className} onClick={this.onToggle}>
         {this.props.label}
+        <span></span>
         </span>
     );
   }

@@ -19,7 +19,7 @@ class BlockStyleToolbar extends React.Component {
             active={blockType}
             onToggle={this.props.onToggle}
           />
-
+          <br></br>
           {BLOCK_TYPES.map(type => {
             return (
               <BlockStyleButton
@@ -46,10 +46,10 @@ export const BLOCK_TYPES = [
 ];
 export const HEADER_TYPES = [
   { label: "Biggest", style: "header-one" },
-  { label: "H2", style: "header-two" },
+  { label: "just a hair larger than medium", style: "header-two" },
   { label: "Medium", style: "header-three" },
-  { label: "H4", style: "header-four" },
-  { label: "H5", style: "header-five" },
+  { label: "slightly smaller than medium", style: "header-four" },
+  { label: "a little bigger than the smallest", style: "header-five" },
   { label: "smallest", style: "header-six" }
 ];
 

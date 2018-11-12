@@ -19,16 +19,19 @@
 
   .editCenter{
     width: 80%;
-    min-height: 1700px;
-    position: absolute;
-    left: 10%;
-    text-align: center;
+    min-height: 500px;
     margin-top: 12%;
+    /* margin: 0 auto; */
     background-color: rgb(151, 215, 240, 0.5);
-    padding: 10px;
+    /* padding: 10px; */
     /* margin: 10px; */
     border-radius: 3.14159265358979%;
-    z-index: -1;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
 }
 
 .bottomButton{
@@ -55,3 +58,22 @@
     font-size: 1.03em;
     cursor: pointer;
 }
+
+.preview{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+}
+
+.tryingToCenter{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+}
+

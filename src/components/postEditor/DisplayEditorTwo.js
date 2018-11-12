@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { getBlog} from '../../redux/reducer';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, convertFromRaw } from 'draft-js';
-import './DisplayEditor.css'
+import './DisplayEditorTwo.css'
 
-class DisplayEditor extends Component{
+class DisplayEditorTwo extends Component{
 
     constructor(props) {
         super(props);
@@ -16,10 +16,9 @@ class DisplayEditor extends Component{
       };
     componentDidMount(){
       this.props.getBlog().then(() => {
-        console.log(this.props.state.blogPost)
-        var contentState = EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.state.blogPost[this.props.state.blogPost.length-1].blog_text)))
+        var contentState = EditorState.createWithContent(convertFromRaw(this.props.state.blogPost[this.props.state.blogPost.length -2].blog_text))
         this.setState({
-        editorState: contentState
+          editorState: contentState
         })
       })
     }
@@ -34,7 +33,7 @@ class DisplayEditor extends Component{
       render() {
 
         return (
-          <div className="editDisplay">
+          <div className="editDisplayTwo">
               <Editor
               readOnly={true}
               toolbarHidden={true}
@@ -54,4 +53,4 @@ function mapStatetoProps(state){
 export default connect(
     mapStatetoProps, 
     { getBlog }
-    )(DisplayEditor);
+    )(DisplayEditorTwo);

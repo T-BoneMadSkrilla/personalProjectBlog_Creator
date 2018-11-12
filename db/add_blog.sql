@@ -1,1 +1,1 @@
-INSERT INTO blog_info (blog_text) VALUES ($1);
+INSERT INTO blogz_info (blog_text) VALUES ($1);

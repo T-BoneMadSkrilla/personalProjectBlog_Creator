@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster|Roboto');
+
+.madSkrilla{
+    font-size: 2.5em;
+    margin: 0  auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    position: sticky;
+    top: 0;
+}
+
 .first{
     width: 100vw;
     height: 90vh;
@@ -12,17 +25,17 @@
 
 .first img{
     object-fit: cover;
-    width: 85vw;
-    height: 90vh;
+    width: 86vw;
+    height: 88vh;
     opacity: 0.8;
-    filter: grayscale(100%);
-    clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+    filter: grayscale(40%);
+    clip-path: polygon(0 0, 1600px 0, 1600px 85%, 0 100%);
     position: fixed;
     z-index: 0;
     
     margin: 0 auto;
     align-self: auto;
-    padding: 6px;
+    padding: 20px;
 }
 
 .createUser{
@@ -53,7 +66,7 @@ font-family:  Fixed, monospace;
     width: 100vw;
     z-index: 2;
     background: #fcf8f7;
-    opacity: .99;
+    opacity: .99999;
 }
 
 .antherContainer{
@@ -67,11 +80,12 @@ font-family:  Fixed, monospace;
     height: 90vh;
     margin: 0 auto;
     z-index: 3;
+    text-decoration: none;
 }
 
 .landingpagecontainer{
     background-color: rgb(151, 215, 240, 0.5);
-    max-width: 80vw;
+    max-width: 85vw;
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -82,30 +96,53 @@ font-family:  Fixed, monospace;
     border-radius: 8%;
     text-decoration: none;
     color: black;
-    font-size: 1.1em;
+    font-size: 1.225em;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 3;
 }
 
-.landingpagecontainer a{
+/* .landingpagecontainer a{
     text-decoration: none;
     color: black;
-    font-size: 1.1em;
-}
+    /* font-size: 1.1em; */
+    /* font-family: Arial, Helvetica, sans-serif;
+} */ 
 
 .containImg{
     object-fit: contain;
-    max-height: 900px;
-    max-width: 300px;
-    margin: 100px;
+    max-width: 375px;
+    max-height: 400px;
+    margin: 75px;
+    overflow: hidden;
 }
 
 .containText{
     text-decoration: none;
     object-fit: none;
-    max-width: 400px;
+    max-width: 375px;
     max-height: 400px;
-    margin: 50px;
+    margin: 75px;
     overflow:hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.aboutMad{
+font-size: 1.5em;
+margin: 0  auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family: 'Comfortaa', cursive;
+}
+
+.myAbout{
+    display: flex;
+    background: #fcf8f7;
+    opacity: .99999;
+    font-size: .5em;
+    z-index: 4;
+    font-family: 'Comfortaa', cursive;
+    justify-content: center;
+align-items: center;
+}

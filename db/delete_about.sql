@@ -1,2 +1,2 @@
-DELETE FROM user_info WHERE about_id = $1;
+DELETE FROM userz_info WHERE about_id = $1;
 
