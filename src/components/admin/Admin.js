@@ -4,7 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {getUser} from '../../redux/reducer';
 import{Link} from 'react-router-dom';
-import Nav from '../nav/Nav'
+
 
 class Admin extends Component{
     constructor(){
@@ -74,6 +74,10 @@ class Admin extends Component{
     
     
     render(){
+
+        const {user} = this.props.state
+        console.log(this.props.match.params.user_id)
+
         const about = this.props.state.user.map((e,i)=>{
             return (
                     <div key={i}>
@@ -96,25 +100,10 @@ class Admin extends Component{
 
         return(
             <div> 
-                <Nav/>
+                
                 <div className="adminCenter">
                 <div>
 
-                Background options
-                <br></br>
-                <select>
-                    <option value="color1">option1</option>
-                    <option value="color2">option2</option>
-                    <option value="colo3r">option3</option>
-                    <option value="color4">option4</option>
-                    <option value="color5">option5</option>
-                    <option value="color6">option6</option>
-                    <option value="color7">option7</option>
-                    <option value="color8">option8</option>
-                    <option value="color9">option9</option>
-                    <option value="color10">option10</option>
-                    <option value="color11">option12</option>
-                </select>
 
                 <div>
                     <br></br>

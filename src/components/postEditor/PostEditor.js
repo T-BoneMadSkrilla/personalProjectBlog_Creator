@@ -12,9 +12,9 @@ import ImageAdd from './ImageAdd';
 
 import axios from 'axios';
 
-import DisplayEditor from '../postEditor/DisplayEditor';
-import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
-import DisplayEditorThree from '../postEditor/DisplayEditorThree';
+// import DisplayEditor from '../postEditor/DisplayEditor';
+// import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
+// import DisplayEditorThree from '../postEditor/DisplayEditorThree';
 
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];

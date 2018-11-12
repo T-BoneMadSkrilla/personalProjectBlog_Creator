@@ -25,3 +25,27 @@
     max-width: 700px;
     max-height: 700px;
 }
+
+.homeSizing {
+        height: 90px;
+        width: 25px;
+        position: absolute;
+        left: 33%;
+        margin-top: 4%;
+}
+
+.homeLogo {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: -1px 0 black, 0 0.25px black, 0.25px 0 black, 0 -1px black;
+}
+
+.homeMiddle a{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+   
+}
+.homeMiddle a:hover{
+    font-size: 1.25em;
+}

@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
 import './Nav.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
-import {getUser} from '../../redux/reducer';
+import { getAllUserz } from '../../redux/reducer';
 
 class Nav extends Component{
     
 
     componentDidMount(){
-        this.props.getUser()
+        
+        this.props.getAllUserz()
     }
 
+    
+
+
     render(){
-        const {user} = this.props.state
-        const logo =user[user.length -1] && user[user.length -1].user_logo
-        // const Home = "Home"
+
+        const {allUserz} = this.props.state
+
+        let find = allUserz.filter(e => e.user_id === +this.props.match.params.user_id)
+        
+        const aboutInfo = find[find.length -1]
+
+        
         return(
         <div>
             <div className="homeStyle">
@@ -27,11 +36,11 @@ class Nav extends Component{
             
 
                     <div className="logo">
-                    <Link to="/home"> {logo} </Link>
+                    <Link to={`/home/${aboutInfo && aboutInfo.user_id}`}> {aboutInfo && aboutInfo.user_logo} </Link>
                     </div>
 
                     <div className="posts">
-                    <Link to="/blog" >Posts</Link>
+                    <Link to={`/blog/${aboutInfo && aboutInfo.user_id}`} >Posts</Link>
                     </div>
 
                 
@@ -47,7 +56,7 @@ function mapStatetoProps(state){
     return {state};
 }
 
-export default connect(
+export default withRouter(connect(
     mapStatetoProps, 
-    { getUser }
-    )(Nav);
+    { getAllUserz }
+    )(Nav));

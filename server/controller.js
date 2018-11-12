@@ -55,8 +55,9 @@ const addBlog = ( req, res)=>{
     const dbInstance = req.app.get('db');
     const{blog_text} = req.body;
     console.log(blog_text)
+    const {user_id} = req.user
     dbInstance
-    .add_blog(blog_text)
+    .add_blog(blog_text, user_id)
     .then( response => res.status(200).json(response))
     .catch(err=> {
         console.log(err)

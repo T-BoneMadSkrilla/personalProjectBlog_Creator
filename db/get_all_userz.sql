@@ -1,1 +1,1 @@
-SELECT * FROM userz_info
+SELECT * FROM userz_info;

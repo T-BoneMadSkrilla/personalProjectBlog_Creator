@@ -14,22 +14,24 @@ componentDidMount(){
     render(){
         
         
+        
         const {allUserz} = this.props.state
-        console.log(allUserz)
-        // var arr = this.props.state
-        // var sorted_arr = arr.slice().sort();
+        
+        var sorted_arr = allUserz.slice().sort(function(a, b){return b-a});
 
-        var results = [];
-         for (let i = 0; i < allUserz.length - 1; i++) {
-         if (allUserz[i].user_id !== allUserz[i + 1].user_id) {
-         results.push(allUserz[i]);
-    }
-}
-        console.log(results)
-        const previewMap = results.map((e, i) => {
+        // var results = [];
+
+        //  for (let i = 0; i < sorted_arr.length -1; i++) {
+        //  if (sorted_arr[i].user_id) {
+        //  results.push(sorted_arr[i]);
+        //     }
+        // }
+
+
+        // console.log(results)
+        const previewMap = sorted_arr.map((e, i) => {
             if(e.user_id !== null){ 
             return (
-                // key={i} to={`/movies/${e.title}`}
                 <Link to={`/home/${e.user_id}`} key={i} className="antherContainer">
                 <div className="landingpagecontainer">
                 <div><img  className="containImg" src={e.hero_img}/></div>
@@ -67,7 +69,6 @@ componentDidMount(){
                 Check out some of our user's sites!
             </div>
               {previewMap}
-
             </div>
             <div className="myAbout">
                 founded in late 2018, MadSkrilla was named after the totally badass creator, T-Bone MadSkrilla.
@@ -134,3 +135,14 @@ export default connect(
     // </div>
     // </div>
     // </Link> */}
+
+
+    // console.log(allUserz)
+        // var arr = this.props.state
+        
+        // let find1 = sorted_arr.find(e => e.user_id == 1 && !null)
+        // let finder = [find1]
+        // console.log(finder)
+        // let find2 = sorted_arr.find(e => e.user_id == 2 && !null)
+        // console.log(find1)
+        // console.log(find2 && find2.blog_about_text) // this 100% works but time consuming 
