@@ -74,11 +74,18 @@ class Admin extends Component{
     
     
     render(){
-
         const {user} = this.props.state
         console.log(this.props.match.params.user_id)
+        console.log(this.props.state)
+        var email = user.map((e,i)=>{
+            return (
+                <div key={i}>
+                welcome {e.user_email}
+                </div>
+            )
+        })
 
-        const about = this.props.state.user.map((e,i)=>{
+        const about = user.map((e,i)=>{
             return (
                     <div key={i}>
                     <div>
@@ -100,7 +107,7 @@ class Admin extends Component{
 
         return(
             <div> 
-                
+                {email}
                 <div className="adminCenter">
                 <div>
 
@@ -157,77 +164,3 @@ export default connect(
 
 
 
-    
-    // this.heroImg = this.props.state.user.map((e,i)=>{
-        //     return (
-            //         <div key={i}>
-            //         {e.hero_img}
-            //         </div>
-            //     )
-            // })
-            
-            // this.homeBlog = this.props.state.user.map((e,i)=>{
-                //     return (
-                    //         <div key={i}>
-                    //         {e.blog_about_text}
-                    //         </div>
-                    //     )
-                    // })
-                    // this.logo = this.props.state.user.map((e,i)=>{
-                        //     return (
-                            //         <div key={i}>
-                            //         {e.user_logo}
-                            //         </div>
-                            //     )
-                            // })
-                            
-                            
-                            // submitHeroImg(){
-                                //     const {hero_img} = this.state
-                                //     axios.post('/api/user', {hero_img})
-                                //     .then( () => {
-                                    //         this.setState({ user_logo: ""})
-                                    //         this.props.getUser()
-                                    // })
-                                    // }
-                                    
-                                    // submitLogo(){
-                                        //     const {user_logo} = this.state
-                                        //     axios.post('/api/userlogo', {user_logo})
-                                        //     .then( () => {
-                                            //         this.setState({ user_logo: ""})
-                                            //         this.props.getUser()
-                                            // })
-                                            // }
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            // <div>
-                                            // {logo}
-                                            // <br></br>
-                                            // {heroImg}
-                                            // <br></br>
-                                            // {homeBlog} 
-                                            // </div>
-                                            
-                                            
-                                            
-                                            
-                                            // const {user} = this.props.state
-        // const homeBlog =user[user.length -1] && user[user.length -1].blog_about_text
-        // const heroImg =user[user.length -1] && user[user.length -1].hero_img
-        // const logo =user[user.length -1] && user[user.length -1].user_logo
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            // {/* <button onClick={() =>this.submitHeroImg()}>Submit dis bich</button> */}
-                                            // {/* <button onClick={()=> this.submitLogo()}>submit dis bich</button> */}

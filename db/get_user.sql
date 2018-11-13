@@ -1,6 +1,8 @@
 --join
 
-SELECT * FROM userz_info WHERE user_id = $1;
+SELECT userz_info.about_id, userz_info.user_logo, userz_info.hero_img, userz_info.blog_about_text, userz.user_email FROM userz_info FULL OUTER JOIN userz 
+ON userz_info.user_id = userz.user_id WHERE userz_info.user_id = $1;
+
 
 
 -- CREATE TABLE user_info (

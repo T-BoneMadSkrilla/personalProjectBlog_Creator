@@ -4,6 +4,7 @@ import { getBlog} from '../../redux/reducer';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, convertFromRaw } from 'draft-js';
 import './DisplayEditorTwo.css'
+import {withRouter} from 'react-router-dom';
 
 class DisplayEditorTwo extends Component{
 
@@ -16,7 +17,11 @@ class DisplayEditorTwo extends Component{
       };
     componentDidMount(){
       this.props.getBlog().then(() => {
-        var contentState = EditorState.createWithContent(convertFromRaw(this.props.state.blogPost[this.props.state.blogPost.length -2].blog_text))
+        const {blogPost} = this.props.state
+              let find = blogPost && blogPost.filter(e => e.user_id === +this.props.match.params.user_id)
+              const blogInfo = find && find[find.length -2] 
+              
+              var contentState = blogInfo && EditorState.createWithContent(convertFromRaw(JSON.parse(blogInfo.blog_text)))
         this.setState({
           editorState: contentState
         })
@@ -50,7 +55,7 @@ function mapStatetoProps(state){
     return {state};
 }
 
-export default connect(
+export default withRouter(connect(
     mapStatetoProps, 
     { getBlog }
-    )(DisplayEditorTwo);
+    )(DisplayEditorTwo));

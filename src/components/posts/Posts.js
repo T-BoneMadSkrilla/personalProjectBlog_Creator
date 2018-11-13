@@ -5,8 +5,8 @@ import {getUser, getBlog} from '../../redux/reducer';
 import Nav from '../nav/Nav'
 
 import DisplayEditor from '../postEditor/DisplayEditor';
-// import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
-// import DisplayEditorThree from '../postEditor/DisplayEditorThree';
+import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
+import DisplayEditorThree from '../postEditor/DisplayEditorThree';
 
 class Posts extends Component{
 
@@ -25,8 +25,8 @@ class Posts extends Component{
             <div className="postCenter">
             
                 <DisplayEditor/>
-                {/* <DisplayEditorTwo/>
-               <DisplayEditorThree/>  */}
+                <DisplayEditorTwo/>
+               <DisplayEditorThree/> 
             </div>
             </div>
         )
