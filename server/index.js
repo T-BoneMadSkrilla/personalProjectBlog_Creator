@@ -59,7 +59,7 @@ passport.deserializeUser( (obj, done) => {
       
       
       
-      const {getAllUserz, getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog} = require('./controller');
+      const {getAllUserz, getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog, getProdz,addProdz} = require('./controller');
       
       massive(process.env.CONNECTION_STRING).then(dbInstance => {
               app.set('db', dbInstance)
@@ -88,6 +88,9 @@ app.put('/api/updateabout/:id', updateAbout)
 
 app.get('/api/blog', getBlog)
 app.post('/api/blog', addBlog)
+
+app.get('/api/store', getProdz)
+app.post('/api/store', addProdz)
 
 app.listen(port, ()=> console.log(`up in dis bich listening to ${port}`));
 

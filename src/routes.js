@@ -6,6 +6,7 @@ import Store from "./components/store/Store";
 import Admin from "./components/admin/Admin";
 import PostEditor from "./components/postEditor/PostEditor";
 import Landingpage from "./components/Landingpage/Landingpage";
+import Products from "./Products/Products";
 
 
 export default (
@@ -13,8 +14,9 @@ export default (
     <Route path="/" exact component={Landingpage} />
     <Route path="/home/:user_id" component={Home}/>
     <Route path="/blog/:user_id" component={Posts} />
-    <Route path="/store" component={Store} />
+    <Route path="/store/:user_id" component={Store} />
     <Route path="/user" component={Admin}/>
     <Route path="/editblog" component={PostEditor}/>
+    <Route path="/editproducts" component={Products}/>
   </Switch>
 );

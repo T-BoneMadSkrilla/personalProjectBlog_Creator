@@ -6,7 +6,7 @@ class Store extends Component{
     render(){
         return(
             <div className="center">
-                Store
+                Shop
                
             </div>
         )

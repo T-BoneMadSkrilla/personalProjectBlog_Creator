@@ -19,16 +19,19 @@ componentDidMount(){
         
         var sorted_arr = allUserz.slice().sort(function(a, b){return b-a});
 
-        // var results = [];
+        var results = [];
 
-        //  for (let i = 0; i < sorted_arr.length -1; i++) {
-        //  if (sorted_arr[i].user_id) {
-        //  results.push(sorted_arr[i]);
-        //     }
-        // }
+         for (let i = 0; i < sorted_arr.length -1; i++) {
+                if (sorted_arr[i].user_id == 1 || 2 || 3 || 4 || 5 || 6) { 
+                    results.push(sorted_arr[i]);
+                }
+        }
+
+        console.log(sorted_arr)
+
+        console.log(results)
 
 
-        // console.log(results)
         const previewMap = sorted_arr.map((e, i) => {
             if(e.user_id !== null){ 
             return (

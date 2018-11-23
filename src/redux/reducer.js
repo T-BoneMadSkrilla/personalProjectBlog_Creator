@@ -3,6 +3,7 @@ import axios from "axios";
 const GET_ALL_USERZ = "GET_ALL_USERZ"
 const GET_USER = "GET_USER"
 const GET_BLOG = "GET_BLOG"
+const GET_PRODUCTS = "GET_PRODUCTS"
 
 export function getUser(){
     return {
@@ -32,10 +33,20 @@ export function getBlog(){
     }
 }
 
+export function getProducts(){
+    return {
+        type: GET_PRODUCTS,
+        payload: axios.get('/api/store').then( res => {
+            return res.data
+        })
+    }
+}
+
 const initialState = {
     user: [],
     blogPost: [],
-    allUserz: []
+    allUserz: [],
+    products: []
 }
 
 
@@ -57,6 +68,12 @@ export default function reducer(state = initialState, action){
         return {
             ...state,
             allUserz: action.payload
+        };
+
+        case GET_PRODUCTS + "_FULFILLED":
+        return {
+            ...state,
+            products: action.payload
         }
 
         default:

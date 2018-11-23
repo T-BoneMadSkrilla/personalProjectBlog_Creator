@@ -43,7 +43,9 @@ class Nav extends Component{
                     <Link to={`/blog/${aboutInfo && aboutInfo.user_id}`} >Posts</Link>
                     </div>
 
-                
+                    <div className="posts">
+                        <Link to={`/store/${aboutInfo && aboutInfo.user_id}`}>Shop</Link>
+                    </div>
 
                     </div>
 

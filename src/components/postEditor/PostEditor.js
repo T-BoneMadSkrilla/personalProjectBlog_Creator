@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../nav/Nav'
 import { RichUtils, convertToRaw} from 'draft-js';
 import './PostEditor.css'
 import BlockStyleToolbar, {getBlockStyle} from "../BlockStyleToolbar";
@@ -9,12 +8,8 @@ import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
 import createImagePlugin from 'draft-js-image-plugin';
 
 import ImageAdd from './ImageAdd';
-
+import {Link} from 'react-router-dom';
 import axios from 'axios';
-
-// import DisplayEditor from '../postEditor/DisplayEditor';
-// import DisplayEditorTwo from '../postEditor/DisplayEditorTwo';
-// import DisplayEditorThree from '../postEditor/DisplayEditorThree';
 
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];
@@ -44,8 +39,8 @@ class PostEditor extends React.Component{
         let blog_text = JSON.stringify(note.content);
         
         axios.post('/api/blog', {blog_text}).then(()=>{
-            // this.setState({editorState})
-            console.log(blog_text)
+            this.setState({editorState: createEditorStateWithText(text)})
+                        console.log(blog_text)
         })
     }
 
@@ -82,7 +77,7 @@ class PostEditor extends React.Component{
          render(){
         return(
             <div>
-                <Nav />
+                <Link to={"/"}>Back to home</Link>
                 <div className="tryingToCenter">
 
                 <div className="editCenter">
@@ -119,14 +114,7 @@ class PostEditor extends React.Component{
                 <div className="bottomButton">
                 <button onClick={this.sumbitPost}type="button" className="button">POST</button>
                 </div>
-                {/* <div className="preview"> */}
-                {/* <h3>
-                    Preview:
-                    </h3>
-                <DisplayEditor/>
-               <DisplayEditorTwo/>
-               <DisplayEditorThree/>
-                </div> */}
+                <Link to="/editproducts">Click here to edit your products</Link>
             </div>
         )
     }

@@ -64,6 +64,24 @@ const addBlog = ( req, res)=>{
     })
 }
 
+const getProdz = (req, res) => {
+    req.app.get('db')
+    .get_productz()
+    .then(response => res.status(200).json(response))
+}
+
+const addProdz = ( req, res)=>{
+    const dbInstance = req.app.get('db');
+    const{product_title, product_text, product_img, product_price} = req.body;
+    const {user_id} = req.user
+    dbInstance
+    .add_productz(product_title, product_text, product_img, product_price, user_id)
+    .then( response => res.status(200).json(response))
+    .catch(err=> {
+        console.log(err)
+    })
+}
+
 module.exports={
     getAllUserz,
     getUser,
@@ -71,9 +89,10 @@ module.exports={
     deleteAbout,
     updateAbout,
     getBlog,
-    addBlog
+    addBlog,
+    getProdz, 
+    addProdz
 }
-
 
 
 
