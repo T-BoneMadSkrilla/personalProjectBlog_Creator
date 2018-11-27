@@ -35,7 +35,7 @@ componentDidMount(){
         const previewMap = sorted_arr.map((e, i) => {
             if(e.user_id !== null){ 
             return (
-                <Link to={`/home/${e.user_id}`} key={i} className="antherContainer">
+                <Link to={`/home/${e.user_id}/${e.user_logo}`} key={i} className="antherContainer">
                 <div className="landingpagecontainer">
                 <div><img  className="containImg" src={e.hero_img}/></div>
                 <div className="containText">{e.blog_about_text}</div>
@@ -62,14 +62,14 @@ componentDidMount(){
             
             <div className="aboutMad">
                 <div>
-                MadSkrilla is dedicated to providing a free and easy way for our users to create beautiful blogs.
+                MadSkrilla is dedicated to providing a free and easy way for our users to create beautiful blogs with eCommerce capability.
                 </div>
                 <div>
 
                 There's no need to purchase a domain or stylied templates like on other "free" blog platforms. 
                 </div>
                 <br></br>
-                Check out some of our user's sites!
+                Check out some of our user's pages!
             </div>
               {previewMap}
             </div>

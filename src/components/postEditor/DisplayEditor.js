@@ -38,7 +38,7 @@ class DisplayEditor extends Component{
 
       render() {
 
-        // console.log(this.props.match.params.user_id)
+        console.log(this.props.match.params)
         const {blogPost} = this.props.state 
         console.log(blogPost)
 

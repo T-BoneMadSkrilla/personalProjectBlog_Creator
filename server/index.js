@@ -9,8 +9,11 @@ const session = require('express-session');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const port = 3011;
+
+app.use(require("body-parser").text());
 
 app.use(json());
 app.use(cors());
@@ -59,7 +62,7 @@ passport.deserializeUser( (obj, done) => {
       
       
       
-      const {getAllUserz, getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog, getProdz,addProdz} = require('./controller');
+      const {getAllUserz, getUser, addAbout, deleteAbout, updateAbout, getBlog, addBlog, getProdz,addProdz, deleteProdz} = require('./controller');
       
       massive(process.env.CONNECTION_STRING).then(dbInstance => {
               app.set('db', dbInstance)
@@ -91,6 +94,22 @@ app.post('/api/blog', addBlog)
 
 app.get('/api/store', getProdz)
 app.post('/api/store', addProdz)
+app.delete('/api/store/:id', deleteProdz)
+
+app.post("/charge", async (req, res) => {
+  try {
+    let {status} = await stripe.charges.create({
+      amount: 2000, //centzzzz
+      currency: "usd",
+      description: "An example charge",
+      source: req.body
+    });
+
+    res.json({status});
+  } catch (err) {
+    res.status(500).end();
+  }
+});
 
 app.listen(port, ()=> console.log(`up in dis bich listening to ${port}`));
 

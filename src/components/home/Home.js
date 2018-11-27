@@ -17,7 +17,7 @@ class Home extends Component{
 
     render(){
         const {allUserz} = this.props.state
-        console.log(this.props.match.params.user_id)
+        console.log(this.props.match.params)
         console.log(allUserz[allUserz.length -1]  && allUserz[allUserz.length -1].user_id)
 
         let find = allUserz.filter(e => e.user_id === +this.props.match.params.user_id)

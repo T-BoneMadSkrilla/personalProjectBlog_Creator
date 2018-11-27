@@ -82,6 +82,15 @@ const addProdz = ( req, res)=>{
     })
 }
 
+const deleteProdz = (req, res)=>{
+    const dbInstance = req.app.get('db');
+    const {id} = req.params
+    console.log(req.body)
+    dbInstance
+    .delete_product(id)
+    .then(response => {res.status(200).json(response)})
+}
+
 module.exports={
     getAllUserz,
     getUser,
@@ -91,7 +100,8 @@ module.exports={
     getBlog,
     addBlog,
     getProdz, 
-    addProdz
+    addProdz,
+    deleteProdz
 }
 
 

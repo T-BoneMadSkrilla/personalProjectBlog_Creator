@@ -36,15 +36,15 @@ class Nav extends Component{
             
 
                     <div className="logo">
-                    <Link to={`/home/${aboutInfo && aboutInfo.user_id}`}> {aboutInfo && aboutInfo.user_logo} </Link>
+                    <Link to={`/home/${aboutInfo && aboutInfo.user_id}/${aboutInfo && aboutInfo.user_logo}`}> {aboutInfo && aboutInfo.user_logo} </Link>
                     </div>
 
                     <div className="posts">
-                    <Link to={`/blog/${aboutInfo && aboutInfo.user_id}`} >Posts</Link>
+                    <Link to={`/blog/${aboutInfo && aboutInfo.user_id}/${aboutInfo && aboutInfo.user_logo}`} >Posts</Link>
                     </div>
 
                     <div className="posts">
-                        <Link to={`/store/${aboutInfo && aboutInfo.user_id}`}>Shop</Link>
+                        <Link to={`/store/${aboutInfo && aboutInfo.user_id}/${aboutInfo && aboutInfo.user_logo}`}>Shop</Link>
                     </div>
 
                     </div>
