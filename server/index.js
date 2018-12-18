@@ -8,11 +8,12 @@ const app = express();
 const session = require('express-session');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
-
+const path = require('path')
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const port = 3011;
 
+app.use( express.static( `${__dirname}/../build/` ) );
 app.use(require("body-parser").text());
 
 app.use(json());
@@ -70,7 +71,7 @@ passport.deserializeUser( (obj, done) => {
         
         app.get( '/login',
         passport.authenticate('auth0',
-          { successRedirect: 'http://localhost:3000/user', failureRedirect: '/login'}
+          { successRedirect: process.env.FRONT_END + '/user', failureRedirect: '/login'}
         )
       );
 
@@ -109,6 +110,10 @@ app.post("/charge", async (req, res) => {
   } catch (err) {
     res.status(500).end();
   }
+});
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 app.listen(port, ()=> console.log(`listening to ${port}`));
