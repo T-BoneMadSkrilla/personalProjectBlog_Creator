@@ -7,7 +7,7 @@ const getAllUserz = (req, res) => {
 
 const getUser = (req, res)=>{
     const dbInstance = req.app.get('db');
-    console.log('booty-clappa',req.user.user_id)
+    console.log('here',req.user.user_id)
     // const {user_id} = req.user
     dbInstance
     .get_user([req.user.user_id])

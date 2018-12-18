@@ -6,6 +6,8 @@
     text-align: center;
     padding: 10%;
     flex-direction: column;
+    box-sizing: border-box;
+    min-width: 99vh;
 }
 
 /* display: flex

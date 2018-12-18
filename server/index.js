@@ -111,6 +111,6 @@ app.post("/charge", async (req, res) => {
   }
 });
 
-app.listen(port, ()=> console.log(`up in dis bich listening to ${port}`));
+app.listen(port, ()=> console.log(`listening to ${port}`));
 
 

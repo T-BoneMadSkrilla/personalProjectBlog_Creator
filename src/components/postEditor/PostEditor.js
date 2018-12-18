@@ -75,6 +75,7 @@ class PostEditor extends React.Component{
          
          
          render(){
+             
         return(
             <div>
                 <Link to={"/"}>Back to home</Link>
@@ -114,7 +115,9 @@ class PostEditor extends React.Component{
                 <div className="bottomButton">
                 <button onClick={this.sumbitPost}type="button" className="button">POST</button>
                 </div>
-                <Link to="/editproducts">Click here to edit your products</Link>
+                <div className="toEditStore">
+                <Link to='/user'>Click here to go back</Link>
+                </div>
             </div>
         )
     }

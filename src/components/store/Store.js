@@ -22,19 +22,24 @@ class Store extends Component{
 
         const productz = find.map((e,i)=>{
             return (
-                    <Link to={`/product/${e.user_id}/${e.product_id}`}key={i}>
+                    <Link to={`/product/${e.user_id}/${e.product_id}`}key={i} className="linkContainer">
 
-                    <div>
+                    <div className="storeContainer"> 
+
+                    <div >
                     {e.product_title}
                     </div>
 
                     <div>
-                    <img src={e.product_img}/>
+                    <img className="containStoreImg"src={e.product_img}/>
                     </div>
 
-                   <div>
-                    {e.product_price}
+                   <div >
+                    {'$'}{e.product_price}
                    </div>
+
+                    </div>
+                   
                    </Link>
                 )
             })
@@ -42,8 +47,11 @@ class Store extends Component{
         return(
             <div className="center">
             <Nav/>
-              
+              <br></br>
+              <br></br>
+              <div className="link2Container">
                {productz}
+              </div>
             </div>
         )
     }

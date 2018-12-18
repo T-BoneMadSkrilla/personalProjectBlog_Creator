@@ -21,7 +21,6 @@ class DisplayEditor extends Component{
               const {blogPost} = this.props.state
               let find = blogPost && blogPost.filter(e => e.user_id === +this.props.match.params.user_id)
               const blogInfo = find && find[find.length -1] 
-              
               var contentState = blogInfo && EditorState.createWithContent(convertFromRaw(JSON.parse(blogInfo.blog_text)))
               this.setState({
               editorState: contentState
@@ -30,11 +29,11 @@ class DisplayEditor extends Component{
           }
     
 
-    onChange = (editorState) => {
-        this.setState({
-          editorState: editorState
-        });
-      };
+    // onChange = (editorState) => {
+    //     this.setState({
+    //       editorState: editorState
+    //     });
+    //   };
 
       render() {
 
@@ -64,3 +63,6 @@ export default withRouter(connect(
     mapStatetoProps, 
     { getBlog }
     )(DisplayEditor));
+
+
+    

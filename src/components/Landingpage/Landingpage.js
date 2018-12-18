@@ -62,11 +62,12 @@ componentDidMount(){
             
             <div className="aboutMad">
                 <div>
-                MadSkrilla is dedicated to providing a free and easy way for our users to create beautiful blogs with eCommerce capability.
+                MadSkrilla is dedicated to providing a free and easy way for our users to create blogs.
                 </div>
+                <br></br>
                 <div>
 
-                There's no need to purchase a domain or stylied templates like on other "free" blog platforms. 
+                There's no need to purchase a domain or stylied templates like on other "free" platforms. 
                 </div>
                 <br></br>
                 Check out some of our user's pages!

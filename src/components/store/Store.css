@@ -7,3 +7,49 @@
     /* margin-top: 15%; */
     /* background: linear-gradient(to right, #02AAB0, #00CDAC ); */
 /* } */ 
+
+.linkContainer{
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+    width: 30%;
+    height: 70vh;
+    margin: 150px;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+.storeContainer{
+    background-color: rgb(151, 215, 240, 0.5);
+    max-width: 85vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+    align-content: stretch;
+    align-self: auto;
+    border-radius: 8%;
+    text-decoration: none;
+    color: black;
+    font-size: 1.225em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.containStoreImg{
+    object-fit: contain;
+    max-width: 375px;
+    max-height: 400px;
+    margin: 75px;
+    overflow: hidden;
+}
+
+.link2Container{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}

@@ -1,6 +1,7 @@
 
 .editDisplay{
-    width: 90%;
+    width: 100%;
+    min-width: 90%;
     min-height: 400px;
     /* position: absolute; */
     /* left: 10%; */

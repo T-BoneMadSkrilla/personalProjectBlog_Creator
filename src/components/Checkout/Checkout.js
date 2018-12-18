@@ -21,7 +21,8 @@ class Checkout extends Component {
   render() {
     return (
       <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
+      <input placeholder="Name"/>
+        <input placeholder="Address"/>
         <CardElement />
         <button onClick={this.submit}>Send</button>
       </div>

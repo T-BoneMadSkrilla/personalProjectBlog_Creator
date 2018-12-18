@@ -1,5 +1,6 @@
 .editDisplayThree{
-    width: 90%;
+    width: 100%;
+    min-width: 90%;
     min-height: 400px;
     text-align: center;
     margin-top: 6%;

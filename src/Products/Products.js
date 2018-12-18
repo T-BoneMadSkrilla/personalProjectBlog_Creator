@@ -63,7 +63,7 @@ class Products extends Component{
     
     render(){
         
-        console.log(this.props.match.params)
+        console.log(this.props.params)
         const {products} = this.props.state
         console.log(products)
 

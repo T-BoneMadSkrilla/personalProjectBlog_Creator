@@ -29,25 +29,30 @@ class IndividualProducts extends Component{
         const {products} = this.props.state
         console.log(products)
         console.log(this.props.match.params)
-        const productz = products.map((e,i)=>{
+
+        // const find = product
+
+        let find = products.filter(e => e.product_id === +this.props.match.params.product_id)
+        // console.log(find) 
+
+        const productz = find.map((e,i)=>{
             return (
-                    <div key={i}>
+                    <div key={i} className="prodContainer">
 
-                    <div>
+                    <div className="productContainer">
                     {e.product_title}
-                    </div>
+                    <img src={e.product_img} className="containProdImg"/>
 
-                    <div>
-                    <img src={e.product_img}/>
-                    </div>
-
-                    <div>
+                    <div >
                         {e.product_text}
                     </div>
 
                    <div>
-                    {e.product_price}
+                    {'$'}{e.product_price}
                    </div>
+
+                    </div>
+                   
                    </div>
                 )
             })
@@ -55,6 +60,13 @@ class IndividualProducts extends Component{
         return(
             <div className="center">
             <Nav />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
                {productz}
                  <StripeProvider apiKey={process.env.REACT_APP_PUBLIC}>
             <div className="example">
